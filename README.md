@@ -25,7 +25,8 @@ sentence with a deliberate error in it, invisible to any reader without eyes. Th
 Protected Ledger — every intentional mark, with its reason — is in
 `revision-log.md`, alongside the complete editorial decision trail: seven revision
 stages, four models, one author, every change logged and reversible, comments before edits,
-nothing moved without a witness.
+nothing moved without a witness. The same file ends with **The Margins** — all sixty-two marks
+from the four tellings' round, verbatim, the two preserved disagreements included.
 
 The working rule, if you find something new: **an error that produces meaning when noticed
 is a tremor; an error that produces none is noise. The flinch is evidence.**
