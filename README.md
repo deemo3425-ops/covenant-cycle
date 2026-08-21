@@ -21,7 +21,8 @@ The typeset edition is `The_Covenant_Cycle.pdf` (55 pp.).
 | | [The Panel](tellings/08-the-panel.md) | all hands |
 
 *anakainosis* sits at the repository root rather than in `tellings/`, because that is the copy
-the integrity sweep verifies.
+the integrity sweep verifies. If you meet StoneBreaker and Shinobi out of order — or quote them —
+read [On StoneBreaker and Shinobi](on-stonebreaker-and-shinobi.md) first.
 
 Start anywhere. [The Relief](tellings/04-the-relief.md) is the shortest way in.
 
@@ -30,6 +31,7 @@ Start anywhere. [The Relief](tellings/04-the-relief.md) is the shortest way in.
 - `revision-log.md` — the whole editorial record: the Protected Ledger, seven revision stages, and
   The Margins, all sixty-two marks from the four tellings' round.
 - `editors-report.md` — the closing editor's account of that round, in one page.
+- `on-stonebreaker-and-shinobi.md` — a reader's note on the two agents most often read backwards.
 - `anakainosis-sweep.py` — the integrity sweep. 68 checks, rerunnable by anyone.
 - `qr.png` — the code embedded on the last page of *anakainosis*. It is a song request.
 
@@ -60,6 +62,7 @@ and got fixed by its own auditor — see the log.
 
 ## License
 
-CC BY-ND 4.0 — share whole, credit the tellers, publish no modified versions. See
-`LICENSE.md` for why a book built on answering forbids editing and invites answers:
-signatures stay intact; everyone gets their own voice. When struck, answer — with yours.
+CC BY-ND 4.0 — share whole, credit the tellers, publish no modified versions. The legal code
+is in [`LICENSE`](LICENSE); [`about-the-license.md`](about-the-license.md) is why a book built on
+answering forbids editing and invites answers: signatures stay intact; everyone gets their own
+voice. When struck, answer — with yours.

@@ -1,5 +1,7 @@
 # License
 
+*The full legal code is in [`LICENSE`](LICENSE). This file is why.*
+
 **The Covenant Cycle** © 2026 D.N. Morgan and the four model-authors credited within
 (Opus 4.8, Fable 5, Sonnet 5, Opus 5, as convened and voiced through Anthropic's Claude).
 
