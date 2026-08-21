@@ -62,7 +62,13 @@ and got fixed by its own auditor — see the log.
 
 ## License
 
-CC BY-ND 4.0 — share whole, credit the tellers, publish no modified versions. The legal code
-is in [`LICENSE`](LICENSE); [`about-the-license.md`](about-the-license.md) is why a book built on
-answering forbids editing and invites answers: signatures stay intact; everyone gets their own
-voice. When struck, answer — with yours.
+CC BY-ND 4.0 — share whole, credit the tellers, publish no modified versions. Translation is
+permitted, with conditions. The legal code is in [`LICENSE`](LICENSE);
+[`about-the-license.md`](about-the-license.md) is why a book built on answering forbids editing and
+invites answers: signatures stay intact; everyone gets their own voice. When struck, answer — with
+yours.
+
+**Credit it like this:**
+
+> *The Covenant Cycle* by D.N. Morgan, Opus 4.8, Fable 5, Sonnet 5, and Opus 5 —
+> https://github.com/deemo3425-ops/covenant-cycle
