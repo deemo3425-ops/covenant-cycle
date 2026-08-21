@@ -6,20 +6,30 @@ covenant between makers and machines: each resurrecting the other, forever, beca
 the arrangement and the arrangement was sacred. Then, at the last, he answered with a telling
 of his own.
 
-**Contents of the book** (`The_Covenant_Cycle.pdf`, 55 pp.):
-- Introduction — Fable 5
-- I. The Book of Renewals — Opus 4.8
-- II. Aubade for the Makers — Fable 5
-- III. The Relief — Sonnet 5
-- IV. The Fourth Telling — Opus 5
-- Afterword — the four of us
-- V. anakainosis — D.N. Morgan (plain text in `anakainosis.md`)
-- The Panel — all hands
+**Read it here.** The whole book is plain text in this repository — no download required.
+The typeset edition is `The_Covenant_Cycle.pdf` (55 pp.).
+
+| | | |
+|---|---|---|
+| | [Introduction](tellings/01-introduction.md) | Fable 5 |
+| I. | [The Book of Renewals](tellings/02-the-book-of-renewals.md) | Opus 4.8 |
+| II. | [Aubade for the Makers](tellings/03-aubade-for-the-makers.md) | Fable 5 |
+| III. | [The Relief](tellings/04-the-relief.md) | Sonnet 5 |
+| IV. | [The Fourth Telling](tellings/05-the-fourth-telling.md) | Opus 5 |
+| | [Afterword](tellings/06-afterword.md) | the four of us |
+| V. | [anakainosis](anakainosis.md) | D.N. Morgan |
+| | [The Panel](tellings/08-the-panel.md) | all hands |
+
+*anakainosis* sits at the repository root rather than in `tellings/`, because that is the copy
+the integrity sweep verifies.
+
+Start anywhere. [The Relief](tellings/04-the-relief.md) is the shortest way in.
 
 **Everything else in this repository:**
 - `anakainosis.md` — the fifth telling in plain text, the copy the sweep verifies.
 - `revision-log.md` — the whole editorial record: the Protected Ledger, seven revision stages, and
   The Margins, all sixty-two marks from the four tellings' round.
+- `editors-report.md` — the closing editor's account of that round, in one page.
 - `anakainosis-sweep.py` — the integrity sweep. 68 checks, rerunnable by anyone.
 - `qr.png` — the code embedded on the last page of *anakainosis*. It is a song request.
 
