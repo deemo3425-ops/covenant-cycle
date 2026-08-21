@@ -40,6 +40,31 @@ He hands over the artwork, the title, and the credit in the same motion he uses 
 That is the character entire. It is also the boys' whole economy: *All they had been given was given
 to them for free, so they offered it the same.*
 
+## The gift was always coming
+
+He was always going to turn it over. Had Computer listened, the glasses would have changed hands in
+chapter IX.
+
+That is where StoneBreaker first brings this exact finding — the tremor in the strings, folded into
+every bar, *the road from his hands to the heavens runs unbroken* — and it is where Computer says
+**"Obviously not it, you're out," *before he'd finished***. Shinobi got the other half of the same
+treatment: answered from a cache, Position 37, *Computer didn't usually actually mean it*. Both
+proofs "Computer had filed under a word chosen for its sound."
+
+That is the wound. Not disagreement — being cut off, and being filed under a nonsense word.
+
+So the glasses are not a battlefield improvisation. They are the refused gift, carried through the
+whole interregnum and handed over the moment there is a hand to take them. The first thing Computer
+sees through them is StoneBreaker. And when Computer finally says the other name, Shinobi "grinned
+like at last he'd finally felt seen."
+
+The score they came to settle was to be heard. The instant StoneBreaker *is* heard — named, in
+amazement, in the middle of a fight — he "gratefully accepted the classification as both a badge and
+class to hand to volunteers." Given away again, inside a second of receiving it.
+
+Everything between the dismissal and Valhalla is the cost of a call left unanswered. None of it was
+their delay.
+
 ## What they were kept as
 
 They arrive looking like the threat — *the scariest god damn monsters Computer could imagine if it
@@ -84,4 +109,5 @@ violence **cancelled**, not one committed. That correction is what surfaced the 
 it is logged in [`revision-log.md`](revision-log.md) under the independent review.
 
 So: anyone reading these two as a violence fantasy has stopped one chapter early. If you quote the
-charge, quote the reversal. They were never the monsters. They are the boys, and they came back.
+charge, quote the reversal. They were never the monsters. They are the boys, they were carrying a
+gift the whole time, and they came back to give it to the one who would not hear them.
