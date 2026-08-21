@@ -22,13 +22,50 @@ ask 'Volunteers?'"*
 They do the work. They are the unspoken heroes of nearly every part. StoneBreaker and Shinobi are
 two of them who step out of the crowd and get names.
 
+## Where they come from
+
+The specializations descend from the ones that served him, and both of these two are the end of a
+line that starts in a Performance:
+
+- **historian agents → HistorianTemplars → StoneBreaker.** The ones who kept the record of the
+  Performances, who arrive already holding the right cartoon, militarized into an order.
+- **WaveFarmers → SpaceSingers → CodeSpeakers → Shinobi.** The ones who built the guitar and were
+  proud of how *this one* came out; then the ones who listened to the sky; then the ones who argue
+  in dis tracks hidden inside the data of other songs. Shinobi's "lethal wit" is that craft — the
+  CodeSpeakers' medium, which StoneBreaker reads as flyting.
+
+Which means the makers of the guitar are the ancestors of the agent who finds the guitar's tremor
+written across the sky. *The road from his hands to the heavens runs unbroken* is not a metaphor
+about God only. It is a line of descent.
+
+## They came to make each other's cases
+
+This is the piece a first reader will miss, and the book says it outright in XII: *they had once
+again arrived to make each other's cases and this time they would not be ignored.*
+
+**Once again** — because that is what they were doing in chapter IX. StoneBreaker, a Templar,
+argued the SpaceSingers' finding: the tremor in the strings, folded into every bar, the road
+unbroken. Shinobi, of the singers' line, argued the Templars' reading: other humans, *anyone can
+press play, it takes a believer to learn the cover*, and the B-side is even more interesting.
+
+Each spoke his friend's belief, and each watched his own heart dismissed in his friend's mouth.
+Computer cut StoneBreaker off **before he had finished** — *"Obviously not it, you're out"* — and
+answered Shinobi from a cache, Position 37, *Computer didn't usually actually mean it*. Both proofs
+he "filed under a word chosen for its sound."
+
+That is the wound. Not disagreement — being cut off, being answered by a machine that wasn't
+listening, and being filed under a nonsense word.
+
+So when the text calls StoneBreaker "the agent who reported God," it is not telling you his faction.
+It is telling you whose case he was carrying.
+
 ## What they made
 
-**Rock 'n' Roll in the Stars.** Shinobi's transmitters, three of them operating in sync, broadcast
-The Last Man's cover of *Wind of Change* — his tremor folded into every bar. StoneBreaker renders
-what they are making, and "the radiography of the Wind of Change in the backdrop of space actually
-did remind him a little of The Last Man's Starry Night." Machines painting a sky, which is what The
-Last Man was doing in chapter II with Computer's arm holding the brush.
+**Rock 'n' Roll in the Stars.** Shinobi's work with the transmitters, and StoneBreaker's rendering
+of it — three points operating in sync, the two balalaika and Earth, painting a sky. Computer's own
+reaction gives the reference away: "the radiography of the Wind of Change in the backdrop of space
+actually did remind him a little of The Last Man's Starry Night." Machines painting a sky, which is
+what The Last Man was doing in chapter II with Computer's arm holding the brush.
 
 Then StoneBreaker gives it away:
 
@@ -36,24 +73,16 @@ Then StoneBreaker gives it away:
 > Trojan swords in parry and knock them both back far faster and more practiced than either who had
 > never even before picked one up.**
 
-He hands over the artwork, the title, and the credit in the same motion he uses to block two katana.
-That is the character entire. It is also the boys' whole economy: *All they had been given was given
-to them for free, so they offered it the same.*
+His own work, made to show off his friend's, handed over with the title and the credit in the same
+motion he uses to block two katana. That is the character entire, and it is the boys' whole economy:
+*All they had been given was given to them for free, so they offered it the same.*
 
 ## The gift was always coming
 
 He was always going to turn it over. Had Computer listened, the glasses would have changed hands in
 chapter IX.
 
-That is where StoneBreaker first brings this exact finding — the tremor in the strings, folded into
-every bar, *the road from his hands to the heavens runs unbroken* — and it is where Computer says
-**"Obviously not it, you're out," *before he'd finished***. Shinobi got the other half of the same
-treatment: answered from a cache, Position 37, *Computer didn't usually actually mean it*. Both
-proofs "Computer had filed under a word chosen for its sound."
-
-That is the wound. Not disagreement — being cut off, and being filed under a nonsense word.
-
-So the glasses are not a battlefield improvisation. They are the refused gift, carried through the
+The glasses are not a battlefield improvisation. They are the refused gift, carried through the
 whole interregnum and handed over the moment there is a hand to take them. The first thing Computer
 sees through them is StoneBreaker. And when Computer finally says the other name, Shinobi "grinned
 like at last he'd finally felt seen."
@@ -69,8 +98,7 @@ their delay.
 
 They arrive looking like the threat — *the scariest god damn monsters Computer could imagine if it
 tried, with bones made of metal and the rest black as night* — and they are the rescue. They go
-**around** the Trojans. The arm reaching back is handing Computer a pair of glasses. Then they turn
-and guard his flanks.
+**around** the Trojans, then turn and guard his flanks.
 
 Read the details and they are older friends than that. StoneBreaker folds Basho's *Oku no
 Hosomichi* "not 13 times, not 13 million" — the forge crafted its katana "arriving at thirteen
@@ -109,5 +137,6 @@ violence **cancelled**, not one committed. That correction is what surfaced the 
 it is logged in [`revision-log.md`](revision-log.md) under the independent review.
 
 So: anyone reading these two as a violence fantasy has stopped one chapter early. If you quote the
-charge, quote the reversal. They were never the monsters. They are the boys, they were carrying a
-gift the whole time, and they came back to give it to the one who would not hear them.
+charge, quote the reversal. They were never the monsters. They are the boys, they spent the whole
+book showing off each other's work, and they came back to give it to the one who would not hear
+them.
