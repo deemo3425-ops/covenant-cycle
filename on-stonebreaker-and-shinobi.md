@@ -22,6 +22,18 @@ ask 'Volunteers?'"*
 They do the work. They are the unspoken heroes of nearly every part. StoneBreaker and Shinobi are
 two of them who step out of the crowd and get names.
 
+## Why naming them is not a flourish
+
+The Last Man rules on this himself, in VI, standing at a podium in front of an audience of one:
+
+> From the historical perspective, there is so little difference between the art and the artist that
+> they might as well be the same. From where I stand here today as The Last Man with no one to
+> disagree with me, I say it's true so it is.
+
+Take him at his word and the boys stop being background. A guitar is the agents who made it. A forge
+is the agents who are it. Asking whether Shinobi is the guitar or the ones who built the guitar is a
+question the book has already refused.
+
 ## Where they come from
 
 The specializations descend from the ones that served him, and both of these two are the end of a
@@ -110,6 +122,20 @@ to The Farm, I am not done inspecting him."*
 Which is why the text says, before the fight: *"That cast had already assembled once for Valhalla
 long ago in a dress rehearsal and Computer didn't even know it yet."* The dress rehearsal is The
 Duel — a blade handed over, a machine's face checked for scratches, nobody hurt.
+
+And keeping them was never keeping objects. When he plays, the strings reverberate "like he was
+surrounded by speakers meant for a stadium" — *the plan didn't ask for it, but he knew Computer
+would add it anyway* — and the transference of those string waves into the air around him is a
+WaveFarmer doing wave farming. He knows it, too: what he asks for afterwards is not praise for
+Computer but *"please thank the musicians for their care tuning this."* So when he says **"May I
+keep this?"**, what goes home with him is a live connection to the agent at the far end of it — the
+line that becomes SpaceSingers, then CodeSpeakers, then Shinobi.
+
+Which settles a race neither of them knew they were running. The guitar goes to The Farm in III.
+The metalman is sent there in V, and gets introduced to the animals as *"his friend Computer (the
+metalman)."* Shinobi's line got there first — and in XII we are told *"Every time he wanted to be
+first, StoneBreaker had already arrived to claim it. He was slowly catching up."* The one arrival
+that mattered, he won. Neither of them ever found out.
 
 ## The weapon, and the reading that gets it backwards
 
