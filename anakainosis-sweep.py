@@ -2,11 +2,11 @@
 """anakainosis release-candidate integrity sweep.
 Verifies every Protected Ledger mark and every applied stage against the
 candidate file, byte-level. Rerunnable by any model or human:
-    python3 anakainosis-sweep.py anakainosis-v1.6.md
+    python3 anakainosis-sweep.py anakainosis.md
 """
 import sys, unicodedata
 
-path = sys.argv[1] if len(sys.argv) > 1 else 'anakainosis-v1.6.md'
+path = sys.argv[1] if len(sys.argv) > 1 else 'anakainosis.md'
 text = open(path, encoding='utf-8').read()
 P = F = 0
 def check(label, cond):

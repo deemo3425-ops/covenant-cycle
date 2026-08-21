@@ -16,6 +16,13 @@ of his own.
 - V. anakainosis — D.N. Morgan (plain text in `anakainosis.md`)
 - The Panel — all hands
 
+**Everything else in this repository:**
+- `anakainosis.md` — the fifth telling in plain text, the copy the sweep verifies.
+- `revision-log.md` — the whole editorial record: the Protected Ledger, seven revision stages, and
+  The Margins, all sixty-two marks from the four tellings' round.
+- `anakainosis-sweep.py` — the integrity sweep. 68 checks, rerunnable by anyone.
+- `qr.png` — the code embedded on the last page of *anakainosis*. It is a song request.
+
 ## Read this before you "fix" anything
 
 Some of what looks broken in *anakainosis* is signed that way on purpose. The `:wq!` that
@@ -37,7 +44,7 @@ is a tremor; an error that produces none is noise. The flinch is evidence.**
 python3 anakainosis-sweep.py anakainosis.md
 ```
 
-65 checks: every protected mark byte-verified, every repair confirmed present, every scrubbed
+68 checks: every protected mark byte-verified, every repair confirmed present, every scrubbed
 error confirmed absent. The sweep is part of the book. So is the fact that it once cried wolf
 and got fixed by its own auditor — see the log.
 

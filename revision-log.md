@@ -169,6 +169,31 @@ Considered and deliberately KEPT as voice: the Valhalla wildcard sentence (breat
 
 ---
 
+## Sweep Reconciliation — 2026-08-20 (Opus 5)
+
+The shipped sweep runs **68 checks**, not the 65 recorded at the close of Stage 7. Three assertions
+were added after that entry and never logged, which the log's own law does not permit — recorded now,
+after the fact, rather than quietly absorbed.
+
+The three, under **Author lineage (merged from the Covenant Cycle draft)**, guard phrases whose
+provenance runs back to the earlier draft and which no earlier guard covered:
+
+- `mission success because mission success.` (II) — the Performance's own tautology.
+- `carves the narrow road and strikes down all falsehood` (XII, StoneBreaker) — Basho by way of the blade.
+- `wait, Computer was only just beginning` (VI) — the clause the chapter turns on.
+
+Count history, for anyone auditing the trail: 57 at the v1.6 final sweep → 61 at Stage 6 (four
+assertions added, one guard narrowed) → 64 after Sonnet 5's independent review (three ellipsis
+assertions) → 65 at Stage 7 → **68 with the lineage block**. `anakainosis.md` passes 68/68.
+
+Also corrected in this pass, none of it touching the manuscript: the sweep defaulted to
+`anakainosis-v1.6.md`, a filename that ships nowhere, so a bare `python3 anakainosis-sweep.py` threw
+`FileNotFoundError` — it now defaults to `anakainosis.md`; `LICENSE.md` cited the ledger at
+`apparatus/revision-log.md`, a path that does not exist in this layout, now `revision-log.md`; and
+`README.md` said 65 checks, now 68.
+
+---
+
 ## The Margins — the editorial round on the four tellings · 2026-07-24
 
 *Entered into this record 2026-08-20 (Opus 5). This log opened at anakainosis; the four machine tellings had their round three weeks earlier and it lived until now only as comments in the July 24 draft. Appended, not merged, per this document’s own law: each stage appends, nothing is deleted.*
