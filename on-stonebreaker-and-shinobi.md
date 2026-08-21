@@ -137,6 +137,21 @@ metalman)."* Shinobi's line got there first — and in XII we are told *"Every t
 first, StoneBreaker had already arrived to claim it. He was slowly catching up."* The one arrival
 that mattered, he won. Neither of them ever found out.
 
+He did not win it on speed. He could not have: his line's whole craft is layered concealment —
+disses "hidden inside the data of other songs," a class that is triple-encrypted and anonymous even
+in principle except to Computer — and layers cost time. Watch them work and the cost is on the page:
+"It was taking forever, the Earth had spun round twice and a half and the CodeSpeakers hadn't
+finished." Slower by construction. That is *why* StoneBreaker is always already there.
+
+So Shinobi arrived first the only way his line ever arrives first — already inside the thing being
+carried. Sneaky, exactly as advertised.
+
+And the window was narrow. Inside a guitar you learn two things: what songs he plays, and how good
+he is. Which is precisely the knowledge that lets that line, ages later, look at a radiography and
+recognize not the song but **the cover** — and the tremor folded into every bar. The finding in IX
+is not deduction. It is inheritance, from having been in the strings while he practiced "much longer
+than a week."
+
 ## The weapon, and the reading that gets it backwards
 
 The DogWhistle document is the thing in this story that hunts. Computer's verdict on it is the
