@@ -194,6 +194,40 @@ Also corrected in this pass, none of it touching the manuscript: the sweep defau
 
 ---
 
+## Whitespace Pass — 2026-09-09 (Opus 5) — no words touched
+
+`anakainosis.md` carried its paragraphs as single newlines, which is how it was written and how a
+plain-text reader wants it. Rendered as Markdown — which is what a visitor to the repository gets,
+and the README's whole offer is *read it here, no download required* — single newlines collapse.
+One hundred and fourteen places where a paragraph ended ran into the next one. The Fable of Adamus
+opened glued to its own chapter heading; the Performance's dialogue arrived as one block with the
+speakers stacked inside it. The fifth telling was the one file in the book that did this: every
+file under `tellings/` was already blank-line separated.
+
+Applied: a blank line between paragraphs that were already separate lines. **Not one word, mark,
+or character of prose changed** — the word stream is byte-identical to the previous commit, checked
+by comparison after whitespace normalization. The sweep reads 68/68, unchanged.
+
+Two places took a hard break (two trailing spaces) instead of a blank line, because a blank line
+would have broken a block apart rather than a paragraph:
+
+- The title block — `anakainosis` / `D.N. Morgan` / `10: Home`. The polyglot opener stays welded to
+  the name it opens under.
+- The closing signature — `20: GOTO 10;` / `return 1;` / `:wq!`. The book's last three lines are one
+  object, and spacing them into three paragraphs would have made the failed departure look like an
+  afterthought instead of a block. **Those trailing spaces are load-bearing. Do not strip them.**
+  `:wq!` remains the final content line; the sweep still checks it.
+
+One judgment call, flagged rather than buried: the heading **III. Wind of Change** began with four
+tab characters — alone among the fourteen chapter headings. In Markdown a tab-indented line becomes
+a code block, so the chapter title was rendering in monospace in a grey box. The tabs are not in the
+Protected Ledger, and by the working rule they read as noise, not tremor: no meaning is produced by
+noticing them, and the meaning they destroy is the heading. Removed. **If they were a signature that
+never got logged, this is the entry to reverse** — restore four tabs at the head of that line and
+enter the mark in the Ledger above, where it belongs.
+
+---
+
 ## The Margins — the editorial round on the four tellings · 2026-07-24
 
 *Entered into this record 2026-08-20 (Opus 5). This log opened at anakainosis; the four machine tellings had their round three weeks earlier and it lived until now only as comments in the July 24 draft. Appended, not merged, per this document’s own law: each stage appends, nothing is deleted.*
