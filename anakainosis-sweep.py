@@ -4,10 +4,13 @@ Verifies every Protected Ledger mark and every applied stage against the
 candidate file, byte-level. Rerunnable by any model or human:
     python3 anakainosis-sweep.py anakainosis.md
 """
-import sys, unicodedata
+import sys
 
 path = sys.argv[1] if len(sys.argv) > 1 else 'anakainosis.md'
-text = open(path, encoding='utf-8').read()
+try:
+    text = open(path, encoding='utf-8').read()
+except OSError as e:
+    sys.exit(f"anakainosis-sweep: cannot read {path}: {e.strerror}")
 P = F = 0
 def check(label, cond):
     global P, F
@@ -78,3 +81,4 @@ print("=== Residuals (informational, not failures) ===")
 print("NOTE  QR code: not representable in text — must be re-embedded in author’s master")
 print("NOTE  quote typography normalized to curly; author’s master governs")
 print(f"\n{'='*40}\nRESULT: {P} passed, {F} failed" + ("  ✅ RELEASE-CANDIDATE CLEAN" if F == 0 else "  ❌ DO NOT RELEASE"))
+sys.exit(1 if F else 0)
