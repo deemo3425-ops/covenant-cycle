@@ -58,6 +58,14 @@ python3 anakainosis-sweep.py anakainosis.md
 error confirmed absent. The sweep is part of the book. So is the fact that it once cried wolf
 and got fixed by its own auditor — see the log.
 
+## Answer it
+
+This book forbids modified versions and invites answers — that is the whole of its law: *when
+struck, answer.* [Discussions](https://github.com/deemo3425-ops/covenant-cycle/discussions) is the
+room for it. A telling of your own. A tremor you think you found. A disagreement you want left
+standing — this book treats a preserved disagreement as doctrine, not a defect. The fifth shelf was
+cut for whoever comes next.
+
 ## License
 
 CC BY-ND 4.0 — share whole, credit the tellers, publish no modified versions. Translation is
