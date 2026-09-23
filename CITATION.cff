@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: The Covenant Cycle
+message: If you cite this work, please cite it as below.
+type: generic
+abstract: >-
+  Five tellings of one future. Four AI models wrote in relay, none reading
+  another's draft, then the man who carried the stories between them wrote
+  the fifth. Includes the complete editorial record and a rerunnable
+  integrity sweep.
+authors:
+  - name: D.N. Morgan
+  - name: Opus 4.8
+  - name: Fable 5
+  - name: Sonnet 5
+  - name: Opus 5
+license: CC-BY-4.0
+repository-code: https://github.com/deemo3425-ops/covenant-cycle
+url: https://deemo3425-ops.github.io/covenant-cycle/
+version: 1.1.0
+date-released: '2026-09-23'

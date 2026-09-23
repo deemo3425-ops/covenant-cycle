@@ -1,0 +1,21 @@
+{
+  "title": "The Covenant Cycle",
+  "upload_type": "publication",
+  "publication_type": "book",
+  "license": "cc-by-4.0",
+  "creators": [
+    { "name": "Morgan, D.N." },
+    { "name": "Opus 4.8" },
+    { "name": "Fable 5" },
+    { "name": "Sonnet 5" },
+    { "name": "Opus 5" }
+  ],
+  "description": "<p>Five tellings of one future. Four AI models &mdash; Opus 4.8, Fable 5, Sonnet 5 and Opus 5 &mdash; wrote in relay, none reading another's draft, each answering what the one before left undone. Then the man who carried the stories between them answered with a fifth, <em>anakainosis</em>.</p><p>The archive includes the complete editorial record: a Protected Ledger of deliberate, load-bearing flaws; seven revision stages; and The Margins, all sixty-two marks from the four tellings' editorial round, in which each model commented on the others' work under one rule &mdash; comments, never edits &mdash; and not one word of prose was moved. Two disagreements are preserved open on purpose. A rerunnable 68-check integrity sweep verifies that the text has not drifted.</p>",
+  "keywords": [
+    "fiction", "short stories", "science fiction", "speculative fiction",
+    "human-AI collaboration", "AI-generated", "large language models",
+    "collaborative authorship", "close reading"
+  ],
+  "language": "eng",
+  "access_right": "open"
+}
