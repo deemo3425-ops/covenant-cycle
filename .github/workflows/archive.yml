@@ -1,0 +1,50 @@
+name: Archive the book
+
+# This environment cannot reach archive.softwareheritage.org or web.archive.org,
+# so the runner does it. Manual, and safe to repeat: both services deduplicate.
+on:
+  workflow_dispatch:
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      # Software Heritage preserves the full git history -- every commit, the
+      # revision log, the Protected Ledger -- not just the current tree.
+      - name: Software Heritage
+        run: |
+          code=$(curl -sS -o /tmp/swh.json -w '%{http_code}' -X POST \
+            "https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/deemo3425-ops/covenant-cycle/")
+          echo "HTTP $code"; cat /tmp/swh.json; echo
+          case "$code" in
+            200|201|202) echo "accepted" ;;
+            429) echo "::warning::rate limited by Software Heritage; try again later" ;;
+            *) echo "::error::unexpected response $code"; exit 1 ;;
+          esac
+
+      # The Wayback Machine snapshots the rendered pages, which is what a reader
+      # (or a search engine) sees. Each page is saved separately.
+      - name: Wayback Machine
+        run: |
+          base=https://deemo3425-ops.github.io/covenant-cycle
+          fail=0
+          for u in \
+            "$base/" \
+            "$base/anakainosis.html" \
+            "$base/tellings/01-introduction.html" \
+            "$base/tellings/02-the-book-of-renewals.html" \
+            "$base/tellings/03-aubade-for-the-makers.html" \
+            "$base/tellings/04-the-relief.html" \
+            "$base/tellings/05-the-fourth-telling.html" \
+            "$base/tellings/06-afterword.html" \
+            "$base/tellings/08-the-panel.html" \
+            "$base/editors-report.html" \
+            "$base/revision-log.html" \
+            "$base/about-the-license.html" \
+            "https://github.com/deemo3425-ops/covenant-cycle" ; do
+            code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 120 -L "https://web.archive.org/save/$u" || echo 000)
+            echo "$code  $u"
+            case "$code" in 200|301|302) ;; *) fail=1 ;; esac
+            sleep 6   # the save endpoint rate-limits aggressively
+          done
+          [ "$fail" = 0 ] || echo "::warning::some snapshots did not confirm; re-run later"

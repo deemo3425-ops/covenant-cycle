@@ -13,6 +13,11 @@ task_categories:
 - text-generation
 size_categories:
 - n<1K
+configs:
+- config_name: default
+  data_files:
+  - split: train
+    path: data/tellings.jsonl
 ---
 
 # The Covenant Cycle
