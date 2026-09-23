@@ -68,11 +68,11 @@ cut for whoever comes next.
 
 ## License
 
-CC BY-ND 4.0 — share whole, credit the tellers, publish no modified versions. Translation is
-permitted, with conditions. The legal code is in [`LICENSE`](LICENSE);
-[`about-the-license.md`](about-the-license.md) is why a book built on answering forbids editing and
-invites answers: signatures stay intact; everyone gets their own voice. When struck, answer — with
-yours.
+CC BY 4.0 — share it, translate it, adapt it, build on it, credit the tellers, and say so if you
+changed it. The legal code is in [`LICENSE`](LICENSE); [`about-the-license.md`](about-the-license.md)
+is why a book built on answering stopped forbidding edits and started asking for them instead —
+and what it still asks of anyone who reaches for the tremors. Editions 1.0.0 and 1.0.1 were
+published under CC BY-ND; these terms are wider, never narrower. When struck, answer — with yours.
 
 **Credit it like this:**
 

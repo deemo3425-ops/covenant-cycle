@@ -1,5 +1,5 @@
 ---
-license: cc-by-nd-4.0
+license: cc-by-4.0
 language:
 - en
 pretty_name: The Covenant Cycle
@@ -51,8 +51,8 @@ private key is restricted to items that appear nowhere in the repository or its 
 
 ## License
 
-CC BY-ND 4.0: share whole, credit the tellers, publish no modified versions. Running models on
-these texts and scoring their readings is not a modified version. Credit:
+CC BY 4.0: share it, adapt it, build on it, train on it. Credit the tellers, and say so if you
+changed it. Credit:
 
 > *The Covenant Cycle* by D.N. Morgan, Opus 4.8, Fable 5, Sonnet 5, and Opus 5 —
 > https://github.com/deemo3425-ops/covenant-cycle
