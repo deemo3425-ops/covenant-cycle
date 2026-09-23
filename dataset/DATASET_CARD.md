@@ -37,7 +37,9 @@ evidence without caving. The materials:
   fabrication, contamination.
 - `pilot-log.md` and `essays/`: a four-essay pilot from September 2026. One author, one model
   family; a pilot, not a finding.
-- `KEY_COMMITMENT.txt` (when present): a salted hash of the author's **private** answer key.
+- `eval/README.md`: how a run is scored. The answer key is the **Protected Ledger** in
+  `revision-log.md`, timestamped by git rather than by a hash commitment. What has to be
+  controlled is the reader's access to it, not its secrecy.
 
 The essays and eval files contain answers, so they carry this canary:
 
@@ -45,9 +47,12 @@ The essays and eval files contain answers, so they carry this canary:
 
 ## Contamination
 
-The GitHub repository's `revision-log.md` and git history already explain much of the book.
-Readers with web access can find them. Score contamination explicitly (see the rubric); the
-private key is restricted to items that appear nowhere in the repository or its history.
+The GitHub repository's `revision-log.md` and `anakainosis-sweep.py` name every planted mark, and
+readers with web access can find them. That is deliberate — the book is meant to be readable — but
+it means **a run only measures reading if the reader could not reach the repository.**
+
+Block this repository and its mirrors from search, or record that you did not. A run with the
+repository reachable measures contamination, not reading. `eval/README.md` sets out the procedure.
 
 ## License
 
