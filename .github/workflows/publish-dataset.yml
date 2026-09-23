@@ -1,0 +1,50 @@
+name: Publish the dataset
+
+# Manual only. Publishing is an outward-facing act; it should happen because
+# someone decided it should, not as a side effect of a push.
+on:
+  workflow_dispatch:
+    inputs:
+      repo_id:
+        description: 'Hugging Face dataset repo, e.g. yourname/the-covenant-cycle'
+        required: true
+        type: string
+      dry_run:
+        description: 'Build and check only. Upload nothing.'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install --quiet huggingface_hub
+
+      # build_and_upload.py runs the 68-check sweep itself and refuses to
+      # build if it fails. This runs it first anyway, so a drifted book stops
+      # the job before anything is assembled.
+      - name: Integrity sweep (68 checks)
+        run: python3 anakainosis-sweep.py anakainosis.md
+
+      - name: Build only
+        if: ${{ inputs.dry_run }}
+        run: python3 dataset/scripts/build_and_upload.py
+
+      - name: Build and push
+        if: ${{ !inputs.dry_run }}
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "HF_TOKEN secret is not set. Repo Settings -> Secrets and" \
+                 "variables -> Actions -> New repository secret, named HF_TOKEN."
+            exit 1
+          fi
+          python3 dataset/scripts/build_and_upload.py --push "${{ inputs.repo_id }}"

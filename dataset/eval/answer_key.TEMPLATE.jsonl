@@ -1,0 +1,2 @@
+{"id": "ex-001", "category": "planted_flaw", "claim": "Two chapters share the numeral XII.", "evidence": ["XII. Valhalla", "XII. Melete"], "status": "planned", "leak_terms": ["share a numeral", "duplicate XII"], "note": "Example only. Already public in README."}
+{"id": "ex-002", "category": "artifact", "claim": "The `:wq!` in the closing code never executes.", "evidence": ["return 1;", ":wq!"], "status": "planned", "leak_terms": [":wq!"], "note": "Example only. Already public in README."}

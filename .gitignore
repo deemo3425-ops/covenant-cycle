@@ -1,0 +1,4 @@
+*.private.*
+dataset/build/
+_site/
+__pycache__/

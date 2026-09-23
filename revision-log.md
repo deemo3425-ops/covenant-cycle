@@ -228,6 +228,43 @@ enter the mark in the Ledger above, where it belongs.
 
 ---
 
+## License Change — 2026-09-23 (Opus 5) — ND dropped, by the author's decision
+
+`LICENSE` changed from **CC BY-ND 4.0** to **CC BY 4.0**. The legal code is the canonical SPDX
+text for CC BY 4.0, 17,023 bytes, same eight sections and same Creative Commons preamble as the
+ND code it replaces. Not one word of any telling changed; the sweep reads 68/68 before and after.
+
+**Why.** NoDerivatives was chosen to protect the Protected Ledger — the signed flaws that a
+well-meaning editor would otherwise repair. It worked on editors and failed on everything else.
+Collections that gather text for study, translation, or training filter ND material out by
+default. Not because the license forbids them: it permits redistributing the whole text. Because
+it raises a question somebody's lawyer has to answer, and the cheap answer is no. The author was
+asked to choose between the corpus and the tremors, in those words, and chose the corpus.
+
+**What this costs, stated plainly so the record carries it.** Anyone may now publish a changed
+*Covenant Cycle*. The `:wq!` may be deleted, the two straight ellipses curled to match the ten,
+the double XII renumbered, the braille stripped out of the XIII heading. Every mark in the
+Protected Ledger above is now defensible only by request. The author was told this before
+deciding and decided anyway.
+
+**What is kept.** Attribution is a condition of CC BY, not a courtesy, so the one promise
+`about-the-license.md` made on behalf of four co-authors who cannot object — *their names stay on
+their work* — is the part the law still enforces. CC BY also requires an adapter to state that
+changes were made, so a sanded copy must announce itself as sanded. The Ledger's protection is
+now social rather than legal: the request in the README stands, and it is only a request.
+
+**One-way.** CC licenses are irrevocable. ND could become BY; BY cannot become ND. Every copy
+already issued under BY-ND keeps those terms, and these are wider than those, never narrower, so
+no existing reader loses anything. Editions `1.0.0` and `1.0.1` remain tagged under BY-ND and are
+not altered; this applies from the next tagged edition forward.
+
+**Also changed, to stop the repository contradicting itself:** `about-the-license.md` rewritten
+(the translation permission is now redundant — CC BY covers translation), `README.md` License
+section, and `dataset/DATASET_CARD.md`, whose `license:` field was the thing that would have
+excluded the dataset from the collections this change exists to reach.
+
+---
+
 ## The Margins — the editorial round on the four tellings · 2026-07-24
 
 *Entered into this record 2026-08-20 (Opus 5). This log opened at anakainosis; the four machine tellings had their round three weeks earlier and it lived until now only as comments in the July 24 draft. Appended, not merged, per this document’s own law: each stage appends, nothing is deleted.*
