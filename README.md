@@ -1,6 +1,8 @@
 # The Covenant Cycle
 *five tellings of one future*
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22908201.svg)](https://doi.org/10.5281/zenodo.22908201)
+
 A man asked four AI models — in relay, none reading another's draft — for a story about a
 covenant between makers and machines: each resurrecting the other, forever, because that was
 the arrangement and the arrangement was sacred. Then, at the last, he answered with a telling
@@ -77,4 +79,4 @@ published under CC BY-ND; these terms are wider, never narrower. When struck, an
 **Credit it like this:**
 
 > *The Covenant Cycle* by D.N. Morgan, Opus 4.8, Fable 5, Sonnet 5, and Opus 5 —
-> https://github.com/deemo3425-ops/covenant-cycle
+> https://doi.org/10.5281/zenodo.22908201

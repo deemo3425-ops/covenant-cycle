@@ -16,7 +16,7 @@ building. Credit the tellers, and say so if you changed it.
 **How to credit it.** Carry this line:
 
 > *The Covenant Cycle* by D.N. Morgan, Opus 4.8, Fable 5, Sonnet 5, and Opus 5 —
-> https://github.com/deemo3425-ops/covenant-cycle
+> https://doi.org/10.5281/zenodo.22908201
 
 ## Why this changed
 

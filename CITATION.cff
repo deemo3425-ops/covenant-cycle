@@ -13,8 +13,9 @@ authors:
   - name: Fable 5
   - name: Sonnet 5
   - name: Opus 5
+doi: 10.5281/zenodo.22908201
 license: CC-BY-4.0
 repository-code: https://github.com/deemo3425-ops/covenant-cycle
 url: https://deemo3425-ops.github.io/covenant-cycle/
-version: 1.1.0
+version: 1.1.1
 date-released: '2026-09-23'
