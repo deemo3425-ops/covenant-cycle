@@ -22,10 +22,23 @@ jobs:
             *) echo "::error::unexpected response $code"; exit 1 ;;
           esac
 
-      # The Wayback Machine snapshots the rendered pages, which is what a reader
-      # (or a search engine) sees. Each page is saved separately.
+      # The Wayback Machine snapshots the rendered pages -- what a reader, or a
+      # search engine, actually sees. Anonymous Save Page Now is effectively
+      # retired: it answers 500, then 429. The authenticated endpoint works, and
+      # needs archive.org S3 keys from https://archive.org/account/s3.php stored
+      # as the IA_ACCESS_KEY and IA_SECRET_KEY repository secrets.
       - name: Wayback Machine
+        env:
+          IA_ACCESS_KEY: ${{ secrets.IA_ACCESS_KEY }}
+          IA_SECRET_KEY: ${{ secrets.IA_SECRET_KEY }}
         run: |
+          if [ -z "$IA_ACCESS_KEY" ] || [ -z "$IA_SECRET_KEY" ]; then
+            echo "::warning::IA_ACCESS_KEY / IA_SECRET_KEY not set -- skipping."
+            echo "Anonymous saves are refused by archive.org. Get keys at"
+            echo "https://archive.org/account/s3.php and add them as repository"
+            echo "secrets, or snapshot the pages by hand in a browser."
+            exit 0
+          fi
           base=https://deemo3425-ops.github.io/covenant-cycle
           fail=0
           for u in \
@@ -42,9 +55,13 @@ jobs:
             "$base/revision-log.html" \
             "$base/about-the-license.html" \
             "https://github.com/deemo3425-ops/covenant-cycle" ; do
-            code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 120 -L "https://web.archive.org/save/$u" || echo 000)
+            code=$(curl -sS -o /tmp/spn.json -w '%{http_code}' --max-time 120 \
+              -H "Accept: application/json" \
+              -H "Authorization: LOW $IA_ACCESS_KEY:$IA_SECRET_KEY" \
+              -d "url=$u" -d "skip_first_archive=1" \
+              "https://web.archive.org/save") || code=000
             echo "$code  $u"
-            case "$code" in 200|301|302) ;; *) fail=1 ;; esac
-            sleep 6   # the save endpoint rate-limits aggressively
+            case "$code" in 200) ;; *) fail=1; head -c 300 /tmp/spn.json; echo ;; esac
+            sleep 8   # the save endpoint rate-limits aggressively
           done
           [ "$fail" = 0 ] || echo "::warning::some snapshots did not confirm; re-run later"
