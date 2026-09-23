@@ -25,7 +25,10 @@ def sweep():
     r = subprocess.run([sys.executable, "anakainosis-sweep.py", "anakainosis.md"], cwd=ROOT, capture_output=True, text=True)
     last = [l for l in r.stdout.splitlines() if "RESULT" in l]
     print(last[-1] if last else r.stdout[-400:])
-    return "0 failed" in (last[-1] if last else "")
+    # Trust the exit code, not the summary line: "0 failed" is a substring of
+    # "10 failed", "20 failed", and so on, so scraping the text let a defaced
+    # book through the gate at every multiple of ten.
+    return r.returncode == 0
 
 def build():
     if BUILD.exists():
