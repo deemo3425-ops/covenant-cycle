@@ -1,0 +1,52 @@
+name: Cut a release
+
+# Manual only. A published edition is permanent and outward-facing; it should
+# happen because someone decided it should.
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to create, e.g. 1.1.0'
+        required: true
+        type: string
+      title:
+        description: 'Release title'
+        required: true
+        type: string
+      notes_path:
+        description: 'Path to the release notes file in this repo'
+        required: true
+        default: 'releases/1.1.0.md'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # No edition ships on a drifted book.
+      - name: Integrity sweep (68 checks)
+        run: python3 anakainosis-sweep.py anakainosis.md
+
+      - name: Refuse to move an existing tag
+        run: |
+          if git rev-parse "refs/tags/${{ inputs.tag }}" >/dev/null 2>&1; then
+            echo "Tag ${{ inputs.tag }} already exists. Published editions are"
+            echo "never re-pointed; pick a new version instead."
+            exit 1
+          fi
+
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          test -f "${{ inputs.notes_path }}" || {
+            echo "notes file not found: ${{ inputs.notes_path }}"; exit 1; }
+          gh release create "${{ inputs.tag }}" \
+            --target "${{ github.sha }}" \
+            --title "${{ inputs.title }}" \
+            --notes-file "${{ inputs.notes_path }}"
