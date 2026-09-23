@@ -46,7 +46,7 @@ def build():
         shutil.copy2(ROOT / rel, BUILD / rel)
     for sub in ["essays", "eval"]:
         shutil.copytree(ROOT / "dataset" / sub, BUILD / sub, ignore=shutil.ignore_patterns("*.private.*"))
-    for f in ["deep-reading-prompt.md", "pilot-log.md", "KEY_COMMITMENT.txt"]:
+    for f in ["deep-reading-prompt.md", "authorship-essay-prompt.md", "pilot-log.md", "KEY_COMMITMENT.txt"]:
         if (ROOT / "dataset" / f).exists():
             shutil.copy2(ROOT / "dataset" / f, BUILD / f)
     shutil.copy2(ROOT / "dataset" / "DATASET_CARD.md", BUILD / "README.md")

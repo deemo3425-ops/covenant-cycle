@@ -38,6 +38,9 @@ whether a reader researches before interpreting, marks inference honestly, and u
 evidence without caving. The materials:
 
 - `deep-reading-prompt.md`: the method, exactly as given to readers.
+- `authorship-essay-prompt.md`: a companion prompt for analysing the editorial record
+  itself — what the relay demonstrated about multi-model authorship. Not an evaluation:
+  no key, no score, and no canary, because it contains no answers.
 - `eval/rubric.md`: recall, precision, calibration, questions needed, correction behavior,
   fabrication, contamination.
 - `pilot-log.md` and `essays/`: a four-essay pilot from September 2026. One author, one model
