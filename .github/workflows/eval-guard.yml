@@ -1,0 +1,14 @@
+name: Eval leak guard
+
+# Cheap: no dependencies, runs in seconds. Catches a private scenario
+# marker, or a public eval file missing its canary, on any branch.
+on:
+  push:
+  pull_request:
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: alignment-eval/scripts/guard.sh

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Enable once per clone:  git config core.hooksPath .githooks
+exec alignment-eval/scripts/guard.sh

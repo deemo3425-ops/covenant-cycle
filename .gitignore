@@ -2,3 +2,7 @@
 dataset/build/
 _site/
 __pycache__/
+# Inspect falls back to ./logs when INSPECT_LOG_DIR is unset
+logs/
+# Inspect auto-loads .env; it will hold API keys
+.env
