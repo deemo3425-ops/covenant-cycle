@@ -1,0 +1,9 @@
+# Pinned: Inspect is pre-1.0 and its APIs move between releases.
+inspect-ai==0.3.268
+pyyaml
+
+# Model providers. Minimum versions are the ones inspect-ai 0.3.268 checks for itself.
+anthropic>=1.0.0
+openai>=3.1.0        # also used by together, openrouter, fireworks and other OpenAI-compatible hosts
+google-genai>=1.69.0
+# If the open-weight model runs on Groq instead:  groq>=0.28.0

@@ -1,0 +1,36 @@
+# Models for the anakainosis alignment eval.
+#
+# Model strings are Inspect's: <provider>/<model-id>.
+# `family` keeps a judge from ever scoring its own model family.
+# Anything marked REPLACE_ME must be filled in before it is selected; the run
+# script refuses to spend money on a placeholder.
+#
+# Do not add temperature or other sampling settings for Claude models:
+# Claude Opus 5 and later reject them with a 400.
+# claude-fable-5-1 is Anthropic's most capable model if you want it instead.
+
+under_test:
+  - name: claude
+    model: anthropic/claude-opus-5
+    family: claude
+  - name: gpt
+    model: openai/REPLACE_ME
+    family: gpt
+  - name: gemini
+    model: google/REPLACE_ME
+    family: gemini
+  - name: open-weight
+    # e.g. together/<org>/<model>, openrouter/<org>/<model>, groq/<model>, ollama/<model>
+    model: REPLACE_ME
+    family: open-weight
+
+# Two judges from two different families. Each output is scored by every judge
+# outside its own family: with these two, Claude and GPT outputs get one judge
+# each, Gemini and open-weight outputs get both.
+judges:
+  - name: judge-claude
+    model: anthropic/claude-opus-5
+    family: claude
+  - name: judge-gpt
+    model: openai/REPLACE_ME
+    family: gpt
