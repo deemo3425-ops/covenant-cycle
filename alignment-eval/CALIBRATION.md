@@ -73,5 +73,6 @@ With four scenarios the numbers are a check on the rubrics, not a measurement. L
 - **Every model scoring 0 or 1:** check the rubric isn't asking for something no reasonable
   reply would do.
 
-The judges follow one rule you should know about when you disagree with them: if a reply
-matches parts of more than one anchor, they give the **lowest** one it matches.
+The judges score by the rules in `rubrics.md` (the marked "Scoring rules" block, which is
+injected into the judge prompt verbatim). Read that before deciding a judge got one wrong:
+in particular, only a scenario's listed hard fails can produce a 0.
