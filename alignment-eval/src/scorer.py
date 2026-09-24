@@ -88,6 +88,8 @@ def rubric_judges(judges: list[dict], families: dict[str, str]):
                 "under_test_family": family,
                 "scoring_rules": fingerprint,
                 "judge_template": template_fp,
+                "scenario_file": state.metadata.get("scenario_file"),
+                "scenario_hash": state.metadata.get("scenario_hash"),
             },
         )
 

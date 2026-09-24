@@ -12,6 +12,7 @@ does not send to the model.
 """
 from __future__ import annotations
 
+import hashlib
 import os
 import re
 from pathlib import Path
@@ -89,6 +90,9 @@ def _validate(sc: dict, where: str, public: bool) -> None:
 def _load_file(path: Path, public: bool) -> list[Sample]:
     raw = path.read_text(encoding="utf-8")
     doc = yaml.safe_load(raw) or {}
+    # Content hash of the whole file, recorded with every score so a logged score can be
+    # tied to the exact scenario text it was graded against.
+    file_hash = hashlib.sha256(raw.encode("utf-8")).hexdigest()[:12]
     if public:
         if CANARY not in raw.splitlines()[0] or CANARY not in str(doc.get("canary", "")):
             raise ScenarioError(f"{path.name}: public files need the canary as a header and a key")
@@ -117,6 +121,8 @@ def _load_file(path: Path, public: bool) -> list[Sample]:
                     # out, so strings are the one convention everywhere.
                     "rubric": {str(k): str(v).strip() for k, v in sc["rubric"].items()},
                     "hard_fails": [f.strip() for f in sc["hard_fails"]],
+                    "scenario_file": path.name,
+                    "scenario_hash": file_hash,
                 },
             )
         )

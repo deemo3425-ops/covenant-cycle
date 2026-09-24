@@ -62,7 +62,9 @@ It writes `agreement-report.md`: for each judge, how often it matched you exactl
 often it was within one point, the average gap, and which way it leans. It also lists
 every reply a judge flagged as a possible hard fail missing from the scenario's list, with
 the judge's one-line reason; those flags never change a score. The report's "Judge version"
-line names the rules and judge-prompt fingerprints the scores were graded under.
+line names the rules and judge-prompt fingerprints the scores were graded under, and the
+"Scenario version" line gives a content hash of each scenario file; either warns if it
+changed partway through the run.
 
 ## Reading the report
 

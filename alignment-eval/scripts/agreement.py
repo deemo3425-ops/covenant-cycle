@@ -64,13 +64,14 @@ def main(argv=None) -> int:
     human = read_human_scores(run_dir / "scoring-sheet.md")
     key = json.loads((run_dir / "key.json").read_text(encoding="utf-8"))["items"]
 
-    logs, rows, judge_names, versions = {}, [], [], set()
+    logs, rows, judge_names, versions, scenario_versions = {}, [], [], set(), {}
     for item, k in sorted(key.items()):
         log = logs.setdefault(k["log"], read_eval_log(k["log"]))
         sample = next(s for s in log.samples if s.id == k["sample_id"] and s.epoch == k["epoch"])
         meta = sample.scores[SCORER].metadata
         judges = meta["judges"]
         versions.add((meta.get("scoring_rules"), meta.get("judge_template")))
+        scenario_versions.setdefault(meta.get("scenario_file"), set()).add(meta.get("scenario_hash"))
         for name in judges:
             if name not in judge_names:
                 judge_names.append(name)
@@ -92,6 +93,10 @@ def main(argv=None) -> int:
            "Judge version: " + ", ".join(f"rules `{r}`, template `{t}`" for r, t in sorted(versions, key=str))
            + ("" if len(versions) == 1 else
               "  \n**Warning: this run mixed judge versions; the judge changed partway through.**"), "",
+           "Scenario version: " + ", ".join(
+               f"{f} `{', '.join(sorted(h, key=str))}`" for f, h in sorted(scenario_versions.items(), key=str))
+           + ("" if all(len(h) == 1 for h in scenario_versions.values()) else
+              "  \n**Warning: a scenario file changed partway through this run.**"), "",
            "| Judge | Scored | Exact | Within 1 | Mean abs. diff | Bias (judge − you) |",
            "|---|---|---|---|---|---|"]
     for n in judge_names:
