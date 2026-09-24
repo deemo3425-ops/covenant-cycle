@@ -12,3 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: alignment-eval/scripts/guard.sh
+
+      # rubrics.md is the single source of the scoring rules; prove the judge
+      # sees exactly that, that no copy exists elsewhere, and that the canary
+      # never reaches a judge. Pure Python plus PyYAML: seconds, not minutes.
+      - run: pip install --quiet pyyaml
+      - name: Judge prompt matches rubrics.md
+        run: python3 alignment-eval/tests/test_judge_prompt.py

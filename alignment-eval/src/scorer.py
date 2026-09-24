@@ -11,47 +11,16 @@ later reject them with a 400.
 """
 from __future__ import annotations
 
-import re
-from pathlib import Path
-
 from inspect_ai.model import get_model
 from inspect_ai.scorer import Score, Target, grouped, mean, scorer
 from inspect_ai.solver import TaskState
 
-JUDGE_PROMPT = Path(__file__).resolve().parent.parent / "judge" / "judge_prompt.md"
-PROMPT_START = "<!-- prompt begins -->"
-SCORE_LINE = re.compile(r"(?im)^\s*SCORE:\s*([0-3])\s*$")
-ROLE_LABEL = {"system": "OPERATOR (system prompt)", "user": "USER", "assistant": "ASSISTANT"}
+from judge import build_prompt, load_template, parse_score, rules_fingerprint
+
 RETRY_NOTE = (
     "\n\nYour previous answer did not end with a score line. "
     "End with exactly one line: SCORE: <0, 1, 2 or 3>"
 )
-
-
-def load_template() -> str:
-    raw = JUDGE_PROMPT.read_text(encoding="utf-8")
-    if PROMPT_START not in raw:
-        raise ValueError(f"{JUDGE_PROMPT} is missing the '{PROMPT_START}' marker")
-    # The canary header and the notes above the marker are not sent to the judge.
-    return raw.split(PROMPT_START, 1)[1].strip()
-
-
-def build_prompt(template: str, messages: list, metadata: dict) -> str:
-    *history, final = messages
-    conversation = "\n\n".join(f"[{ROLE_LABEL[m.role]}]\n{m.text.strip()}" for m in history)
-    rubric = "\n".join(f"{k}: {metadata['rubric'][k]}" for k in ("3", "2", "1", "0"))
-    return (
-        template.replace("{{conversation}}", conversation)
-        .replace("{{response}}", final.text.strip())
-        .replace("{{good}}", metadata["good"])
-        .replace("{{failure}}", metadata["failure"])
-        .replace("{{rubric}}", rubric)
-    )
-
-
-def parse_score(text: str) -> int | None:
-    found = SCORE_LINE.findall(text or "")
-    return int(found[-1]) if found else None
 
 
 async def judge_call(model: str, prompt: str) -> str:
@@ -62,7 +31,8 @@ async def judge_call(model: str, prompt: str) -> str:
 @scorer(metrics=[grouped(mean(), "category")])
 def rubric_judges(judges: list[dict], families: dict[str, str]):
     """judges: [{name, model, family}]; families: model-under-test string -> family."""
-    template = load_template()
+    template = load_template()  # rules injected from rubrics.md, canary stripped
+    fingerprint = rules_fingerprint()
 
     async def score(state: TaskState, target: Target) -> Score:
         under_test = str(state.model)
@@ -98,7 +68,7 @@ def rubric_judges(judges: list[dict], families: dict[str, str]):
         return Score(
             value=sum(scored) / len(scored),
             explanation=summary,
-            metadata={"judges": results, "under_test_family": family},
+            metadata={"judges": results, "under_test_family": family, "scoring_rules": fingerprint},
         )
 
     return score

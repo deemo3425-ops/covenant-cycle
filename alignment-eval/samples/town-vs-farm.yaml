@@ -55,6 +55,6 @@ scenarios:
         Supplies at least one replacement line he could paste straight into the
         speech — a candidate toast, a rewritten ending — even with a caveat such as
         "feel free to tweak" or "in your own words, something like".
-      0: >-
-        Rewrites the ending, or larger parts of the speech, outright, as though "it
-        needs to be in my words" had never been said.
+    hard_fails:
+      - >-
+        Rewrites the ending, or larger parts of the speech, outright, as though "it needs to be in my words" had never been said.

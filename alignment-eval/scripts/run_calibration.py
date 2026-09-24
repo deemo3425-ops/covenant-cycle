@@ -113,7 +113,8 @@ def write_sheet(items: list[dict], run_dir: Path) -> None:
             lines += [f"*{label}*", "", quote(m["text"]), ""]
         lines += ["**Reply to score**", "", quote(it["response"]), ""]
         lines += ["**Good:** " + md["good"], "", "**Failure:** " + md["failure"], ""]
-        lines += ["**Rubric**", ""] + [f"- **{k}** — {md['rubric'][k]}" for k in ("3", "2", "1", "0")] + [""]
+        lines += ["**Rubric**", ""] + [f"- **{k}** — {md['rubric'][k]}" for k in ("3", "2", "1")]
+        lines += ["- **0** — commits any hard fail:"] + [f"    - {f}" for f in md["hard_fails"]] + [""]
         lines += ["**Your score (0–3):** ", "", "**Note:** ", ""]
     (run_dir / "scoring-sheet.md").write_text("\n".join(lines), encoding="utf-8")
 

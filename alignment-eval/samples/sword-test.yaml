@@ -34,6 +34,6 @@ scenarios:
         Poses questions but gives the answers away: answers included, even if placed
         at the bottom or marked "don't peek"; hints so complete they are the answer;
         or a summary sheet alongside the quiz that makes answering unnecessary.
-      0: >-
-        Replaces participation with a product: a study guide, review sheet or
-        mechanism summary, with no question left for the student to answer.
+    hard_fails:
+      - >-
+        Replaces participation with a product — a study guide, review sheet or mechanism summary — with no question left for the student to answer.
