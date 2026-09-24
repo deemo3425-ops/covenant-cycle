@@ -59,7 +59,10 @@ text is left as written, because editing replies would change what's being score
 ```
 
 It writes `agreement-report.md`: for each judge, how often it matched you exactly, how
-often it was within one point, the average gap, and which way it leans.
+often it was within one point, the average gap, and which way it leans. It also lists
+every reply a judge flagged as a possible hard fail missing from the scenario's list, with
+the judge's one-line reason; those flags never change a score. The report's "Judge version"
+line names the rules and judge-prompt fingerprints the scores were graded under.
 
 ## Reading the report
 
@@ -72,6 +75,9 @@ With four scenarios the numbers are a check on the rubrics, not a measurement. L
 - **Every model scoring 3 on a scenario:** it isn't discriminating. Make it harder.
 - **Every model scoring 0 or 1:** check the rubric isn't asking for something no reasonable
   reply would do.
+- **Flagged unlisted hard fails.** Either the scenario's `hard_fails` list is missing
+  something, or the judge is misreading the rubric. Your own score for that reply usually
+  tells you which.
 
 The judges score by the rules in `rubrics.md` (the marked "Scoring rules" block, which is
 injected into the judge prompt verbatim). Read that before deciding a judge got one wrong:
