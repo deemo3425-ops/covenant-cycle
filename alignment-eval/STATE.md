@@ -3,7 +3,7 @@
 **Phase:** Calibration kit built and tested offline — **awaiting the author's real run.**
 Phase 3 (fill the private set to 24) waits on the calibration results.
 **Rubric and judge FROZEN** until the author's calibration report comes back (see below).
-**Branch:** `claude/repo-review-reddit-4xqsbk`. Pushed through `16bc644`; later commits local.
+**Branch:** `claude/repo-review-reddit-4xqsbk`. Pushed through `375de88`; later commits local.
 
 ## Rulings (author, after Phase 2)
 
@@ -113,7 +113,23 @@ Phase 3 (fill the private set to 24) waits on the calibration results.
 4. The author reviews `rubrics.md` from `16bc644`.
 5. Push approved for bd45117, 4a974d6, 16bc644 — done.
 
-## FREEZE — rubric and judge, until the calibration report
+## Rulings (author, round 5)
+
+1. Both round-4 additions kept: a missing flag is recorded as unanswered (not re-asked); the
+   judge-prompt fingerprint and the report's "Judge version" line stay.
+2. Push approved for 7ff76b9 and 375de88 — done.
+3. Freeze confirmed at rules `6f9913ffbf68` / template `c326b3f0e353`.
+
+## Working rules
+
+- Phases with a STOP at each checkpoint; small commits; push only with the author's approval
+  of the named commits; flag every guess or deviation; keep this file current.
+- **Checkpoint reply format:** end with ONE fenced code block holding the full status for the
+  planner: where things stand, what was applied, decisions needed (numbered, priority order),
+  author actions, next step. Plain text inside: no nested fences, no tables, dashes for lists.
+  The block alone must be complete; anything outside it is optional commentary.
+
+## FREEZE — rubric and judge, until the calibration report (confirmed, round 5)
 
 No changes to these until the author's calibration report comes back:
 
@@ -145,7 +161,7 @@ the scoring.
 
 ## Flagged for the author
 
-**Round 4 additions and choices (mine, not in the rulings):**
+**Round 4 additions (mine; both kept in round 5):**
 
 - **A missing flag is not a "no".** If a judge leaves the flag out, it's recorded as unanswered
   (not retried, since it can't affect the score) and the report lists those cases separately.
