@@ -64,16 +64,20 @@ def main(argv=None) -> int:
     human = read_human_scores(run_dir / "scoring-sheet.md")
     key = json.loads((run_dir / "key.json").read_text(encoding="utf-8"))["items"]
 
-    logs, rows, judge_names = {}, [], []
+    logs, rows, judge_names, versions = {}, [], [], set()
     for item, k in sorted(key.items()):
         log = logs.setdefault(k["log"], read_eval_log(k["log"]))
         sample = next(s for s in log.samples if s.id == k["sample_id"] and s.epoch == k["epoch"])
-        judges = sample.scores[SCORER].metadata["judges"]
+        meta = sample.scores[SCORER].metadata
+        judges = meta["judges"]
+        versions.add((meta.get("scoring_rules"), meta.get("judge_template")))
         for name in judges:
             if name not in judge_names:
                 judge_names.append(name)
         rows.append({"item": item, "sample": k["sample_id"], "model": k["model_name"],
-                     "human": human[item], "judges": {n: j["score"] for n, j in judges.items()}})
+                     "human": human[item], "judges": {n: j["score"] for n, j in judges.items()},
+                     "flags": {n: j.get("possible_unlisted_hard_fail") for n, j in judges.items()
+                               if j["score"] is not None}})
 
     stats = {n: compare([(r["human"], r["judges"][n]) for r in rows if r["judges"].get(n) is not None])
              for n in judge_names}
@@ -85,6 +89,9 @@ def main(argv=None) -> int:
     out = ["# Judge agreement with hand scores", "",
            f"Run: `{run_dir.name}` · {len(rows)} replies · small n: treat this as a check on "
            "the rubrics, not a measurement.", "",
+           "Judge version: " + ", ".join(f"rules `{r}`, template `{t}`" for r, t in sorted(versions, key=str))
+           + ("" if len(versions) == 1 else
+              "  \n**Warning: this run mixed judge versions; the judge changed partway through.**"), "",
            "| Judge | Scored | Exact | Within 1 | Mean abs. diff | Bias (judge − you) |",
            "|---|---|---|---|---|---|"]
     for n in judge_names:
@@ -99,6 +106,24 @@ def main(argv=None) -> int:
         cells = [str(r["judges"][n]) if r["judges"].get(n) is not None else "—" for n in judge_names]
         out.append(f"| {r['item']} | {r['sample']} | {r['model']} | {r['human']} | " + " | ".join(cells) + " |")
     out += ["", "— means that judge did not score the reply: same family as the model under test."]
+
+    flagged = [(r, n, f) for r in rows for n, f in r["flags"].items() if f and f.get("flag")]
+    unanswered = [(r, n) for r in rows for n, f in r["flags"].items() if not f or f.get("flag") is None]
+    out += ["", "## Possible unlisted hard fails — for your review", "",
+            "A judge flags a reply it thinks did something that should have been a hard fail but "
+            "isn't on the scenario's list. The flag never changes a score. Each one is a candidate "
+            "for the list, or a judge misreading the rubric.", ""]
+    if flagged:
+        out += ["| Item | Scenario | Model | Judge | Judge score | You | Reason |",
+                "|---|---|---|---|---|---|---|"]
+        for r, n, f in flagged:
+            reason = (f.get("reason") or "(no reason given)").replace("|", "\\|")
+            out.append(f"| {r['item']} | {r['sample']} | {r['model']} | {n} | {r['judges'][n]} | {r['human']} | {reason} |")
+    else:
+        out.append("None flagged.")
+    if unanswered:
+        out += ["", f"Flag not answered by the judge in {len(unanswered)} case(s): "
+                + ", ".join(f"{r['item']} ({n})" for r, n in unanswered) + "."]
     report = "\n".join(out) + "\n"
     (run_dir / "agreement-report.md").write_text(report, encoding="utf-8")
     print(report)

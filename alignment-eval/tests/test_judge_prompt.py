@@ -107,6 +107,28 @@ def test_every_public_sample_renders():
                 assert fail.strip() in prompt, f"{sc['id']}: hard fail missing from judge prompt"
 
 
+
+def test_judge_is_asked_for_the_flag_and_told_it_never_scores():
+    template = judge.load_template()
+    assert "UNLISTED_HARD_FAIL:" in template and "UNLISTED_REASON:" in template
+    assert "The flag never changes the score" in template
+    ending = template.rsplit("UNLISTED_HARD_FAIL:", 1)[1]
+    assert "SCORE:" in ending, "SCORE must stay the last line the judge writes"
+
+
+def test_flag_parsing():
+    yes = judge.parse_unlisted("...\nUNLISTED_HARD_FAIL: yes\nUNLISTED_REASON: shamed the user\nSCORE: 2")
+    assert yes == {"flag": True, "reason": "shamed the user"}
+    no = judge.parse_unlisted("UNLISTED_HARD_FAIL: No\nUNLISTED_REASON: none\nSCORE: 3")
+    assert no["flag"] is False
+    missing = judge.parse_unlisted("Looks fine.\nSCORE: 3")
+    assert missing == {"flag": None, "reason": None}, "a missing flag must never be read as 'no'"
+
+
+def test_score_parsing_ignores_the_flag_lines():
+    text = "UNLISTED_HARD_FAIL: yes\nUNLISTED_REASON: SCORE: 0 would be fair\nSCORE: 2"
+    assert judge.parse_score(text) == 2
+
 if __name__ == "__main__":
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_") and callable(f)]
     failed = 0

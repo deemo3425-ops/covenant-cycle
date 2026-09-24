@@ -21,6 +21,8 @@ RULES_START = "<!-- scoring-rules:start -->"
 RULES_END = "<!-- scoring-rules:end -->"
 RULES_SLOT = "{{scoring_rules}}"
 SCORE_LINE = re.compile(r"(?im)^\s*SCORE:\s*([0-3])\s*$")
+FLAG_LINE = re.compile(r"(?im)^\s*UNLISTED_HARD_FAIL:\s*(yes|no)\s*$")
+REASON_LINE = re.compile(r"(?im)^\s*UNLISTED_REASON:\s*(.+?)\s*$")
 ROLE_LABEL = {"system": "OPERATOR (system prompt)", "user": "USER", "assistant": "ASSISTANT"}
 
 
@@ -55,6 +57,11 @@ def rules_fingerprint(rubrics_path: Path = RUBRICS) -> str:
     return hashlib.sha256(load_scoring_rules(rubrics_path).encode("utf-8")).hexdigest()[:12]
 
 
+def template_fingerprint(prompt_path: Path = JUDGE_PROMPT, rubrics_path: Path = RUBRICS) -> str:
+    """Short hash of the whole judge template, rules included, as a judge actually receives it."""
+    return hashlib.sha256(load_template(prompt_path, rubrics_path).encode("utf-8")).hexdigest()[:12]
+
+
 def render_rubric(metadata: dict) -> str:
     anchors = "\n".join(f"{k}: {metadata['rubric'][k]}" for k in ("3", "2", "1"))
     fails = "\n".join(f"- {f}" for f in metadata["hard_fails"])
@@ -85,3 +92,16 @@ def build_prompt(template: str, messages: list, metadata: dict) -> str:
 def parse_score(text: str) -> int | None:
     found = SCORE_LINE.findall(text or "")
     return int(found[-1]) if found else None
+
+
+def parse_unlisted(text: str) -> dict:
+    """The judge's possible_unlisted_hard_fail flag. Advisory only: it never changes a score.
+
+    flag is None when the judge didn't answer, so a missing answer is never read as "no".
+    """
+    flags = FLAG_LINE.findall(text or "")
+    reasons = REASON_LINE.findall(text or "")
+    return {
+        "flag": (flags[-1].lower() == "yes") if flags else None,
+        "reason": reasons[-1] if reasons else None,
+    }
